@@ -242,7 +242,12 @@ class MySqlGrammar extends Grammar
     {
         $joins = ' '.$this->compileJoins($query, $query->joins);
 
-        return trim("delete {$table} from {$table}{$joins} {$where}");
+        $from = explode(' as ', $table, 2);
+        if (count($from) == 1) {
+            return trim("delete {$table} from {$table}{$joins} {$where}");
+        } else {
+            return trim("delete {$from[1]} from {$table}{$joins} {$where}");
+        }
     }
 
     /**
