@@ -11,6 +11,22 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 
+/**
+ * Class Builder
+ * @package Illuminate\Database\Eloquent
+ *
+ * Magic Passthru Function from \Illuminate\Database\Query\Builder
+ * @method bool insert(array $values)
+ * @method int insertGetId(array $values, $sequence = null)
+ * @method array getBindings()
+ * @method string toSql()
+ * @method bool exists()
+ * @method int count(string $columns = '*')
+ * @method mixed min(string $column)
+ * @method mixed max(string $column)
+ * @method mixed avg(string $column)
+ * @method mixed sum(string $column)
+ */
 class Builder
 {
     /**
