@@ -34,6 +34,43 @@ use Illuminate\Database\ConnectionResolverInterface as Resolver;
  * Class Model
  * @package Illuminate\Database\Eloquent
  *
+ * Magic Functions from \Illuminate\Database\Eloquent\Builder
+ * @method bool chunk($count, callable $callback)
+ * @method \Illuminate\Database\Eloquent\Builder doesntHave(string $relation, string $boolean = 'and', \Closure $callback = null)
+ * @method array eagerLoadRelations(array $models)
+ * @method $this|\Illuminate\Database\Eloquent\Collection find(mixed $ids, array $columns = ['*'])
+ * @method \Illuminate\Database\Eloquent\Collection findMany(array $ids, array $columns = ['*'])
+ * @method $this findOrFail(mixed $id, array $columns = ['*'])
+ * @method $this findOrNew(mixed $id, array $columns = ['*'])
+ * @method $this first(array $columns = ['*'])
+ * @method $this firstOrCreate(array $attributes)
+ * @method $this firstOrFail(array $columns = ['*'])
+ * @method $this firstOrNew(array $attributes)
+ * @method \Illuminate\Database\Eloquent\Collection get(array $columns = ['*'])
+ * @method array getEagerLoads()
+ * @method \Closure getMacro(string $name)
+ * @method $this getModel()
+ * @method $this[] getModels(array $columns = ['*'])
+ * @method \Illuminate\Database\Query\Builder getQuery()
+ * @method \Illuminate\Database\Eloquent\Builder has(string $relation, string $operator = '>=', int $count = 1, string $boolean = 'and', \Closure $callback = null)
+ * @method \Illuminate\Support\Collection lists(string $column, string|null $key = null)
+ * @method void macro(string $name, \Closure $callback)
+ * @method void onDelete(\Closure $callback)
+ * @method \Illuminate\Database\Eloquent\Builder orHas(string $relation, string $operator = '>=', int $count = 1)
+ * @method \Illuminate\Database\Eloquent\Builder orWhere(string $column, string $operator = null, mixed $value = null)
+ * @method \Illuminate\Database\Eloquent\Builder orWhereHas(string $relation, \Closure $callback, string $operator = '>=', int $count = 1)
+ * @method \Illuminate\Contracts\Pagination\LengthAwarePaginator paginate(int $perPage = null, array $columns = ['*'], string $pageName = 'page', int|null $page = null)
+ * @method mixed pluck(string $column)
+ * @method \Illuminate\Database\Eloquent\Builder setEagerLoads(array $eagerLoad)
+ * @method \Illuminate\Database\Eloquent\Builder setModel(\Illuminate\Database\Eloquent\Model $model)
+ * @method \Illuminate\Database\Eloquent\Builder setQuery(\Illuminate\Database\Query\Builder $query)
+ * @method \Illuminate\Contracts\Pagination\Paginator simplePaginate(int $perPage = null, array $columns = ['*'], string $pageName = 'page')
+ * @method $this updateOrCreate(array $attributes, array $values = [])
+ * @method mixed value(string $column)
+ * @method \Illuminate\Database\Eloquent\Builder where(string $column, string $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method \Illuminate\Database\Eloquent\Builder whereDoesntHave(string $relation, \Closure $callback = null)
+ * @method \Illuminate\Database\Eloquent\Builder whereHas(string $relation, \Closure $callback, string $operator = '>=', int $count = 1)
+ *
  * Magic Passthru Function from \Illuminate\Database\Query\Builder
  * @method bool insert(array $values)
  * @method int insertGetId(array $values, $sequence = null)
@@ -119,7 +156,6 @@ use Illuminate\Database\ConnectionResolverInterface as Resolver;
  * @method \Illuminate\Database\Eloquent\Builder whereNull(string $column, string $boolean = 'and', bool $not = false)
  * @method \Illuminate\Database\Eloquent\Builder whereRaw(string $sql, array $bindings = [], string $boolean = 'and')
  * @method \Illuminate\Database\Eloquent\Builder whereYear(string $column, string $operator, int $value, string $boolean = 'and')
- *
  */
 abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializable, QueueableEntity, UrlRoutable
 {
